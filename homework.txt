@@ -1,0 +1,8 @@
+print("Enter 5 names and their birthday dates ex: rey 25/11/2011 :")
+birthday1 = input()
+birthday2 = input()
+birthday3 = input()
+birthday4 = input()
+birthday5 = input()
+print("so the birthdays are " +birthday1, birthday2, birthday3,  birthday4, birthday5 )
+

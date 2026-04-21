@@ -1,0 +1,2 @@
+a = str("hello congratulations for winning gold in the race")
+print(a[6:21].upper())

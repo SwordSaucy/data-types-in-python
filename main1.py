@@ -1,6 +1,5 @@
-a = int(input("enter a number to check if it is even or odd: "))
-b = a%2
-if b == 0:
-    print("this number is even")
+temperature = int(input("enter the temperature in degrees: "))
+if temperature <= 15:
+    print("you cannot wear light clothes today because it is cold")
 else: 
-    print("this number is odd")
+    print("the temperature is warm today so you can wear light clothes")

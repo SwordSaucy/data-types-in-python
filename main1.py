@@ -1,5 +1,6 @@
-temperature = int(input("enter the temperature in degrees: "))
-if temperature <= 15:
-    print("you cannot wear light clothes today because it is cold")
+amount = float(input("enter purchased amount: "))
+membership = input("do you have a membership answer with yes or no: ")
+if amount >= 10000  or membership.lower() == "yes": 
+    print("you have a discount")
 else: 
-    print("the temperature is warm today so you can wear light clothes")
+    print("you do not have a discount")

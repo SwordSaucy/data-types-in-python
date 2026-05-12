@@ -1,12 +1,4 @@
-a = int(input("enter a number: "))
-if a >= 0: 
-    if a %2 == 0: 
-        print("the number is positive and positive")
-    else: 
-        print("this number is odd and positive")
-else: 
-    if a %2 == 0: 
-        print("the number is positive and negative")
-    else: 
-        print("this number is odd and negative")
-    
+a = int(input("enter number 1(start)"))
+b = int(input("enter number 2(end)"))
+for i in range(a,b+1): 
+    print(i)

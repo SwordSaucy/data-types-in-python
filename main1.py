@@ -1,4 +1,4 @@
-a = int(input("enter number 1(start)"))
-b = int(input("enter number 2(end)"))
-for i in range(b,a-1,-1): 
-    print(i)
+for i in range(5): 
+    for j in range(1,11): 
+        print(j,end="")
+    print( )

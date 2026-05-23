@@ -1,6 +1,8 @@
-a = int(input("enter number 1(start)"))
-b = int(input("enter number 2(end)"))
+#take 2 inputs from the user one of them is string and second is character then find out how many times the character is in the string
+a = str(input("enter text:"))
+b = str(input("character here"))
 sum = 0
-for i in range(a,b+1): 
-    sum = sum+i
-print(f"sum of numbers betwee {a} and {b} is {sum}")
+for i in a: 
+    if b == i: 
+        sum += 1
+print(f"the amount of {b} characters in {a} is {sum}")

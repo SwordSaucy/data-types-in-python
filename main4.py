@@ -1,12 +1,9 @@
-a = int(input("enter the starting number"))
-b = int(input("enter the ending number"))
-i = 0 
-for i in range (a,b+1): 
-    if i == 1: 
-        continue
-    for j in range(2,i): 
-        if i%j == 0: 
-            break
+number = int(input("enter number: "))
+def factorial(number): 
+    if number == 0 or number == 1: 
+        return 1
     else: 
-        print(f"{i}")
-            
+        return number*factorial(number-1)
+result = factorial(number)
+print(f"the factorial of {number} is {result}")
+

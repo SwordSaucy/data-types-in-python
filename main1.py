@@ -1,9 +1,7 @@
-#i want to create a function to calculate tip paid to waiter. function has 2 arguments bills and tips% using calculate tip and print it taken from user
-
-def tippercentage(bills,tip):
-    a = tip/100 
-    tipamount = bills*a
-    print(f"the amount that is to be paid is {bills+tipamount}")
-bills = int(input("please enter the total bill: "))
-tip = int(input("please enter the tip amount in %: "))
-tippercentage(bills,tip)
+a = int(input("enter the starting number"))
+b = int(input("enter ending number"))
+for i in range(a,b-1,-1):
+    if i%5 == 0: 
+        continue
+    else: 
+        print(i)

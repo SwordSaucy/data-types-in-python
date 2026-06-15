@@ -1,6 +1,5 @@
-a = str(input("enter text here : "))
-for i in a: 
-    if i == "a":
-        break
-    else: 
-        print(i, end = "")
+number = float(input("Enter a number: "))
+
+square_root = number ** 0.5
+
+print("The square root of", number, "is", square_root)

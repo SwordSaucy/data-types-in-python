@@ -1,6 +1,3 @@
-list = []
-list1 = [1,2,3,4,5]
-print(list1)
-print(list1[::-1])
-for i in list1: 
-    print(i)
+a = ("s","f","h","i",1,5,2,6,7,3,6,7)
+print(a[::-1])
+print(len(a))

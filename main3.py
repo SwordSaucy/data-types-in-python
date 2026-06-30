@@ -1,17 +1,15 @@
-list1 = [1,12,4,54,213,654,23]
-leng= sum+i
-print(sum)
-average = sum/length
-print(average)
-print(length)
-min = min(list1)
-print(min)
-max = max(list1)
-print(max)
-list1.sort()
-print(list1)
-list1.reverse()
-print(list1)th = len(list1)
-sum = 0
-for i in list1: 
-    sum 
+a = (1,2,3,4,5,6,7,5,4,3,2,1)
+length = len(a)
+middle = length/2
+b = 0
+c = length-1
+flag = True
+while b < middle:
+    if a[b] != a[c]:
+        flag = False
+    c = c-1
+    b=b+1
+if flag == True: 
+    print("this is a pallendrome")
+else: 
+    print("not a pallendrome")

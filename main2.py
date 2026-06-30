@@ -1,8 +1,8 @@
-list1= ["aba", "cfc", "xyz", "abc", "121"]
-count = 0
-for i in list1: 
-    if i[0] != i[-1]: 
-        continue
+
+def tupple(a): 
+    if a[::-1] == a: 
+        print("this is a pallendrome")
     else: 
-        count = count + 1
-print(count)
+        print("this is not a pallendrome")
+a = (1,2,3,4,5,45,6,2)
+tupple(a)

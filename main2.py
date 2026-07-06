@@ -1,8 +1,6 @@
-
-def tupple(a): 
-    if a[::-1] == a: 
-        print("this is a pallendrome")
-    else: 
-        print("this is not a pallendrome")
-a = (1,2,3,4,5,45,6,2)
-tupple(a)
+a = {"codingal":2,"is":2,"best":2,"for":2,"coding":1}
+amount = 0
+for i,j in a.items():
+    if j == 2:
+        amount = amount + 1
+print(amount)

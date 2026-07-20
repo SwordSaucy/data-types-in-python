@@ -1,6 +1,10 @@
-a = {"codingal":2,"is":2,"best":2,"for":2,"coding":1}
-amount = 0
-for i,j in a.items():
-    if j == 2:
-        amount = amount + 1
-print(amount)
+class car:
+    def __init__(self, brand,color):
+        self.brand = brand
+        self.color = color
+object1 = car("volvo", "yellow")
+print(f" the brand of the car is {object1.brand} ")
+print(f" the color of the car is {object1.color}")
+object2 = car("nisa", "red")
+print(f" the brand of the car is {object2.brand} ")
+print(f" the color of the car is {object2.color}")

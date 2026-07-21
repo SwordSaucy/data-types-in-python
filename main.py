@@ -1,9 +1,10 @@
-class student:
-    def __init__ (self, name , age):
-        self.name = name
-        self.age = age
+class iosstring:
+    def __init__(self):
+        self.string1 = ""
+    def getstring(self):
+        self.string1 = str(input("asign here"))
     def display(self):
-        print(f"the name is {self.name}")
-        print(f"the age is {self.age}")
-object1 = student("mark",12)
-object1.display()
+        print(f"string is{self.string1}")
+obj = iosstring()
+obj.getstring()
+obj.display()

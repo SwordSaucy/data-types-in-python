@@ -1,19 +1,18 @@
-class family:
-    def __init__(self,eyecolor,height):
-        self.eyecolor = eyecolor
-        self.height = height
-    def display(self):
-        print(f"the eyecolor is {self.eyecolor} and the height is {self.height}")
-class kid(family):
-    def __init__(self,name,age,gender,eyecolor,height):
-        #super().__init__(eyecolor,height)
-        family.__init__(self,eyecolor,height)
+
+class student:
+    __passingmarks = 40
+    def __init__(self,name,age):
         self.name = name
         self.age = age
-        self.gender = gender
+        self.__privatevariable = 100
     def display(self):
-        print(f"the name is {self.name}, the age is {self.age} and the gender is {self.gender}")
-        super().display()
-object = kid("zack",15,"male","blue",160)
-object.display()
-    
+        print(f"the name is {self.name} the age is{self.age}")
+        print(f"private variable is {self.__privatevariable}")
+    def displaypassingmarks(self):
+        print(f"the passing marks are {student.__passingmarks}")
+object1 = student("jhon",23)
+object1.display()
+object1.displaypassingmarks()
+object1.__passingmarks = 32   
+object1.displaypassingmarks()
+#print(f"the private variable is {object.__privatevariable}") 

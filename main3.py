@@ -1,8 +1,6 @@
-class point:
-    def __init__(self,x,y):
-        self.x = x
-        self.y = y
-    def __str__ (self):
-        return f"({self.x},{self.y})"
-object1 = point(23,243)
-print(object1)
+a = input("Enter a character: ")
+
+if ('a' <= a <= 'z') or ('A' <= a <= 'Z'):
+    print("It is an alphabet")
+else:
+    print("It is not an alphabet")

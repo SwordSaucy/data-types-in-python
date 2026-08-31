@@ -1,2 +1,7 @@
-import math as m
-print(m.sin(234.423))
+a = 5
+b = 6
+c = a + b
+b = c - b
+a = c - a
+print(a)
+print(b)

@@ -1,10 +1,5 @@
-class iosstring:
-    def __init__(self):
-        self.string1 = ""
-    def getstring(self):
-        self.string1 = str(input("asign here"))
-    def display(self):
-        print(f"string is{self.string1}")
-obj = iosstring()
-obj.getstring()
-obj.display()
+number = float(input("Enter a number: "))
+
+square_root = number ** 0.5
+
+print("The square root of", number, "is", square_root)

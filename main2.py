@@ -33,7 +33,7 @@ pygame.display.set_icon(item)
 # 7) Setup the player:
 #    a) Load the player image `player.png`.
 #    b) Set initial player position using `playerX` and `playerY`.
-#    c) Create `playerX_change = 0` to control horizontal movement.
+#    c) Create `playerX_change = 0` to control horizontal movement. game
 playerimage = pygame.image.load("player.png")
 playerx = playerstartx
 playery = playerstarty
@@ -95,7 +95,7 @@ def show_score(x,y):
     screen.blit(score,(x,y))
 def gameovertext():
     overtext = font.render(f"game over!",True,(255,255,255))
-    screen.blit(overtext,(200,250))
+    screen.blit(overtext,(350,250))
 def player(x,y):
     screen.blit(playerimage,(x,y))
 def enemy(x,y,i):
@@ -111,11 +111,11 @@ def iscollision(enemyx,enemyy,bulletx,bullety):
 runing = True
 while runing:
     screen.fill((0,0,0))
-    screen.blit(background,(0,0))
+
     
 # 15) Every frame inside the loop:
 #     a) Clear the screen and draw the background image.
-
+    screen.blit(background,(0,0))
 # 16) Handle events (keyboard and quit):
 #     a) If `pygame.QUIT`, stop the loop.
 #     b) If a key is pressed (`pygame.KEYDOWN`):
@@ -133,7 +133,19 @@ while runing:
 # 17) Update player movement:
 #     a) Add `playerX_change` to `playerX`.
 #     b) Clamp player position so it stays inside the screen boundaries.
-
+        if event.type== pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                playerxchange = -5
+            if event.key == pygame.K_RIGHT:
+                playerxchange = 5
+            if event.key == pygame.K_SPACE and bulletstate == "ready":
+                bulletx = playerx
+                firebullet(bulletx,bullety)
+        if event.type == pygame.KEYUP and event.key in[pygame.K_RIGHT,pygame.K_LEFT]:
+            playerxchange = 0
+    playerx += playerxchange
+    playerx = max(0,min(playerx,screenwidth-64))
+                
 # 18) Update enemy movement for each enemy:
 #     a) If any enemy goes below Y > 340:
 #        - Move all enemies off-screen (enemyY = 2000)
@@ -149,14 +161,37 @@ while runing:
 #          ii) Increase score by 1.
 #          iii) Respawn enemy at a new random position.
 #     e) Draw the enemy on the screen.
-
+    for i in range(numberofenemies):
+        if enemyy[i] > 340:
+            for j in range(numberofenemies):
+                enemyy[j] = 3000
+            gameovertext()
+            break
+        enemyx[i]+= enemyxchange[i]
+        if enemyx[i] <= 0 or enemyx[i] >= screenwidth-64:
+            enemyxchange[i] *= -1
+            enemyy[i] += enemyychange[i]
+        if iscollision(enemyx[i],enemyy[i],bulletx,bullety):
+            bullety = playerstarty
+            bulletstate = "ready"
+            scorevalue += 1
+            enemyx[i]=random.randint(64,screenwidth-64)
+            enemyy[i]= random.randint(enemystartymin,enemystartymax)
+        enemy(enemyx[i],enemyy[i],i)
 # 19) Update bullet movement:
 #     a) If bullet goes off the top of the screen (`bulletY <= 0`):
 #        - Reset bulletY and set `bullet_state = "ready"`.
 #     b) If bullet_state is "fire":
 #        - Draw the bullet.
 #        - Move the bullet upward by decreasing `bulletY`.
-
+    if bullety <= 0:
+        bullety = playerstarty
+        bulletstate = "ready"
+    elif bulletstate == "fire":
+        firebullet(bulletx,bullety)
+        bullety -= bulletychange
+    player(playerx,playery)
+    show_score(textx,texty)
 # 20) Draw the player, show the score, and update the display:
 #     a) Draw player at (playerX, playerY).
 #     b) Display score using `show_score(textX, textY)`.
